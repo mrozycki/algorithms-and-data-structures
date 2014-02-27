@@ -2,23 +2,20 @@
 using namespace std;
 
 int minimum(int *T, int n) {
-  int min = T[0];
+  int min_index = 0;
   for (int i = 1; i < n; i++) {
-    if (T[i] < min) {
-      min = T[i];
+    if (T[i] < T[min_index]) {
+      min_index = i;
     }
   }
 
-  return min;
+  return T[min_index];
 }
 
 int minimum_index(int *T, int n) {
-  int min_value = T[0];
   int min_index = 0;
-
   for (int i = 1; i < n; i++) {
-    if (T[i] < min_value) {
-      min_value = T[i];
+    if (T[i] < T[min_index]) {
       min_index = i;
     }
   }
